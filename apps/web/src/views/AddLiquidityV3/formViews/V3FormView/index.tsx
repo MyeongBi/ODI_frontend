@@ -84,14 +84,8 @@ export const MediumOnly = styled.div`
 
 export const RightContainer = styled(AutoColumn)`
   height: fit-content;
-
-  grid-row: 2 / 3;
-  grid-column: 1;
-
-  ${({ theme }) => theme.mediaQueries.md} {
-    grid-row: 1 / 3;
-    grid-column: 2;
-  }
+  grid-row: 2;
+  grid-column: 1 / -1;
 `
 
 interface V3FormViewPropsType {

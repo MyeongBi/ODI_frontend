@@ -2,6 +2,7 @@ import { ChainId, Token, WNATIVE } from '@pancakeswap/sdk'
 import {
   bscTokens,
   bscTestnetTokens,
+  goerliTestnetTokens,
   BUSD,
   USDC,
   USDT,
@@ -20,7 +21,7 @@ import { ChainMap, ChainTokenList } from '../types'
 
 export const SMART_ROUTER_ADDRESSES = {
   [ChainId.ETHEREUM]: '0x13f4EA83D0bd40E75C8222255bc855a974568Dd4',
-  [ChainId.GOERLI]: '0x337F348189121C37e3E11948d2598C2fbc9A7F08 ',
+  [ChainId.GOERLI]: '0x68bf87277DD6A1870152aABc7DBC1872d92ff1EF',
   [ChainId.BSC]: '0x13f4EA83D0bd40E75C8222255bc855a974568Dd4',
   [ChainId.BSC_TESTNET]: '0x9a489505a00cE272eAa5e07Dba6491314CaE3796',
   // TODO: new chains
@@ -35,7 +36,7 @@ export const SMART_ROUTER_ADDRESSES = {
 
 export const V2_ROUTER_ADDRESS: ChainMap<string> = {
   [ChainId.ETHEREUM]: '0xEfF92A263d31888d860bD50809A8D171709b7b1c',
-  [ChainId.GOERLI]: '0x337F348189121C37e3E11948d2598C2fbc9A7F08 ',
+  [ChainId.GOERLI]: '0x68bf87277DD6A1870152aABc7DBC1872d92ff1EF',
   [ChainId.BSC]: '0x10ED43C718714eb63d5aA57B78B54704E256024E',
   [ChainId.BSC_TESTNET]: '0xD99D1c33F9fC3444f8101754aBC46c52416550D1',
   [ChainId.ARBITRUM_ONE]: '0x8cFe327CEc66d1C090Dd72bd0FF11d690C33a2Eb',
@@ -64,7 +65,7 @@ export const STABLE_SWAP_INFO_ADDRESS: ChainMap<string> = {
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.ETHEREUM]: [WNATIVE[ChainId.ETHEREUM], USDC[ChainId.ETHEREUM], USDT[ChainId.ETHEREUM], WBTC_ETH],
-  [ChainId.GOERLI]: [WNATIVE[ChainId.GOERLI], USDC[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
+  [ChainId.GOERLI]: [WNATIVE[ChainId.GOERLI], USDC[ChainId.GOERLI], BUSD[ChainId.GOERLI], goerliTestnetTokens.odi],
   [ChainId.BSC]: [
     bscTokens.wbnb,
     bscTokens.cake,

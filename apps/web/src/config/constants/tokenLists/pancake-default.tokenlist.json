@@ -75,12 +75,12 @@
       "logoURI": "https://pancakeswap.finance/images/tokens/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82.png"
     },
     {
-      "name": "PancakeSwap Token",
-      "symbol": "CAKE",
-      "address": "0xc2C3eAbE0368a2Ea97f485b03D1098cdD7d0c081",
+      "name": "ODI Token",
+      "symbol": "ODI",
+      "address": "0x2C2876120d96a393f174b848Ab22Bd07cC9800b4",
       "chainId": 5,
       "decimals": 18,
-      "logoURI": "https://pancakeswap.finance/images/tokens/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82.png"
+      "logoURI": ""
     },
     {
       "name": "PancakeSwap Token",

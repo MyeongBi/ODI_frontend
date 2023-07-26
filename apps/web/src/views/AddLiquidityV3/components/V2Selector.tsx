@@ -49,19 +49,19 @@ export function V2Selector({
           ) : (
             <>
               <SelectButton
-                isActive={selectorType === SELECTOR_TYPE.V3}
-                onClick={() => handleFeePoolSelect({ type: SELECTOR_TYPE.V3 })}
+                isActive={selectorType === SELECTOR_TYPE.V2}
+                onClick={() => handleFeePoolSelect({ type: SELECTOR_TYPE.V2 })}
               >
-                V3 LP
+                V2 LP
               </SelectButton>
             </>
           )}
-          <SelectButton
-            isActive={selectorType === SELECTOR_TYPE.V2}
-            onClick={() => handleFeePoolSelect({ type: SELECTOR_TYPE.V2 })}
+          {/* <SelectButton
+            isActive={selectorType === SELECTOR_TYPE.V3}
+            onClick={() => handleFeePoolSelect({ type: SELECTOR_TYPE.V3 })}
           >
-            V2 LP
-          </SelectButton>
+            V3 LP
+          </SelectButton> */}
         </EvenWidthAutoRow>
       }
     />

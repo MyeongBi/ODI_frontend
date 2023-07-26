@@ -282,62 +282,18 @@ export function UniversalAddLiquidity({
                 hideBalance
               />
             </FlexGap>
-            <DynamicSection disabled={!baseCurrency || !currencyB}>
-              {!isV2 &&
-                stableConfig.stableSwapConfig &&
-                [SELECTOR_TYPE.STABLE, SELECTOR_TYPE.V3].includes(selectorType) && (
-                  <StableV3Selector
-                    currencyA={baseCurrency ?? undefined}
-                    currencyB={quoteCurrency ?? undefined}
-                    feeAmount={feeAmount}
-                    selectorType={selectorType}
-                    handleFeePoolSelect={handleFeePoolSelect}
-                  />
-                )}
-
-              {((isV2 && selectorType !== SELECTOR_TYPE.V3) || selectorType === SELECTOR_TYPE.V2) && (
-                <V2Selector
-                  isStable={Boolean(stableConfig.stableSwapConfig)}
-                  selectorType={selectorType}
-                  handleFeePoolSelect={({ type }) => {
-                    // keep using state instead of replacing url in UniversalLiquidity
-                    handleFeePoolSelect({ type })
-                  }}
-                />
-              )}
-
-              {!stableConfig.stableSwapConfig && selectorType === SELECTOR_TYPE.V3 && (
-                <FeeSelector
-                  currencyA={baseCurrency ?? undefined}
-                  currencyB={quoteCurrency ?? undefined}
-                  handleFeePoolSelect={handleFeePoolSelect}
-                  feeAmount={feeAmount}
-                  handleSelectV2={() => setSelectorType(SELECTOR_TYPE.V2)}
-                />
-              )}
-            </DynamicSection>
-          </AutoColumn>
-          {selectorType === SELECTOR_TYPE.STABLE && (
-            <StableConfigContext.Provider value={stableConfig}>
-              <AddStableLiquidity currencyA={baseCurrency} currencyB={quoteCurrency}>
-                {(props) => <StableFormView {...props} stableLpFee={stableConfig?.stableSwapConfig?.stableLpFee} />}
-              </AddStableLiquidity>
-            </StableConfigContext.Provider>
-          )}
-          {selectorType === SELECTOR_TYPE.V3 && (
-            <V3FormView
-              feeAmount={feeAmount}
-              baseCurrency={baseCurrency}
-              quoteCurrency={quoteCurrency}
-              currencyIdA={currencyIdA}
-              currencyIdB={currencyIdB}
+            <V2Selector
+              isStable={Boolean(stableConfig.stableSwapConfig)}
+              selectorType={selectorType}
+              handleFeePoolSelect={({ type }) => {
+                // keep using state instead of replacing url in UniversalLiquidity
+                handleFeePoolSelect({ type: SELECTOR_TYPE.V2 })
+              }}
             />
-          )}
-          {selectorType === SELECTOR_TYPE.V2 && (
-            <AddLiquidity currencyA={baseCurrency} currencyB={quoteCurrency}>
-              {(props) => <V2FormView {...props} />}
-            </AddLiquidity>
-          )}
+          </AutoColumn>
+          <AddLiquidity currencyA={baseCurrency} currencyB={quoteCurrency}>
+            {(props) => <V2FormView {...props} />}
+          </AddLiquidity>
         </ResponsiveTwoColumns>
       </CardBody>
     </>

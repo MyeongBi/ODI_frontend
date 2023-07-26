@@ -77,19 +77,19 @@ const AddLiquidityPage = () => {
 
   return (
     <LiquidityFormProvider>
-      <AddLiquidityV3Layout
+      {/* <AddLiquidityV3Layout
         handleRefresh={handleRefresh}
         showRefreshButton={preferFarmType?.type === SELECTOR_TYPE.V3 && preferFarmType?.feeAmount !== feeAmount}
-      >
-        <UniversalAddLiquidity
-          currencyIdA={currencyIdA}
-          currencyIdB={currencyIdB}
-          preferredSelectType={!feeAmount ? preferFarmType?.type : undefined}
-          isV2={!feeAmount ? preferFarmType?.type === SELECTOR_TYPE.V2 : undefined}
-          preferredFeeAmount={!feeAmount ? preferFarmType?.feeAmount : undefined}
-        />
-        <V3SubgraphHealthIndicator />
-      </AddLiquidityV3Layout>
+      > */}
+      <UniversalAddLiquidity
+        currencyIdA={currencyIdA}
+        currencyIdB={currencyIdB}
+        preferredSelectType={SELECTOR_TYPE.V2}
+        isV2
+        preferredFeeAmount={!feeAmount ? preferFarmType?.feeAmount : undefined}
+      />
+      {/* <V3SubgraphHealthIndicator />
+      </AddLiquidityV3Layout> */}
     </LiquidityFormProvider>
   )
 }
