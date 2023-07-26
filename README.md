@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🥞 Pancake Frontend
 
 <p align="center">
@@ -80,3 +81,6 @@ pnpm build:blog
 | [wagmi](/packages/wagmi)                                      | Extension for [wagmi](https://github.com/wagmi-dev/wagmi), including bsc chain and binance wallet connector            |
 | [awgmi](/packages/awgmi)                                      | connect to Aptos with similar wagmi React hooks.                                                                       |
 
+=======
+# ODI_frontend
+>>>>>>> 4082ac24d9bd42f424a0b750d920fa3307b5e044
