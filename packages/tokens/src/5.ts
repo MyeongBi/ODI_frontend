@@ -9,4 +9,5 @@ export const goerliTestnetTokens = {
   usdc: USDC_GOERLI,
   mockB: new ERC20Token(ChainId.GOERLI, '0xB8DA084D035C9c38518D86A9D079ba6A0Aec4327', 18, 'MOCK B', 'MOCK B'),
   mockA: new ERC20Token(ChainId.GOERLI, '0xD134B434682dF091E398a844Dc3c613fe728cE2D', 18, 'MOCK A', 'MOCK A'),
+  odi: new ERC20Token(ChainId.GOERLI, '0x30EB1AB7eA42dAb8d6839b929c11A0f4F2a1F2CE', 18, 'ODI', 'OdiToken'),
 }
